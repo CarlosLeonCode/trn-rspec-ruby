@@ -3,7 +3,12 @@ require_relative '../models/card.rb'
 RSpec.describe Card do
   let(:card) { Card.new('Ace', 'Spades') }
 
-  it 'has a rank' do
+  # This runs before each example
+  before do
+    puts "--> Before block!"
+  end 
+
+  it 'has a rank and it can change' do
     expect(card.rank).to eq('Ace')
     card.rank = 'Queen'
     expect(card.rank).to eq('Queen')
@@ -16,6 +21,7 @@ RSpec.describe Card do
   it 'has a custom error message' do
     card.suit = "Pacman!"
     comparison = "Spades"
-    expect(card.suit).to eq(comparison), "Hey, I expect #{comparison} but I got #{ card.suit }"
+    # Uncomment line below to watch the custom error
+    # expect(card.suit).to eq(comparison), "Hey, I expect #{comparison} but I got #{ card.suit }"
   end
 end
