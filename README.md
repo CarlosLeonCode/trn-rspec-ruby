@@ -112,3 +112,27 @@ Both remove duplication across tests.
 <hr />
 
 ## Built-in Matchers
+
+### not_to
+This is the opositive of to, in other words, its negation.
+> See matcher_not_to_spec.rb
+
+### eql and eq
+
+- **eq** just compare the value
+- **eql** compare the value but as well the class. It should the same value and class
+> See matcher_eq_eql_spec.rb
+
+### equal and be
+- Equality means that the variable has the same value. (Different houses with the same structure)
+- Identity means that the variable has a reference to the same object in memory (A house with multiple directions)
+
+```ruby
+  # eq -> Compares values
+  # eql -> Compares Type, it's to say the same class
+  # equal and be -> Compares the identity, the same object in memory
+```
+
+
+
+
