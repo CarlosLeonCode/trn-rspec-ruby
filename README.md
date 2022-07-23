@@ -133,6 +133,72 @@ This is the opositive of to, in other words, its negation.
   # equal and be -> Compares the identity, the same object in memory
 ```
 
+### predicate methods
+
+We can use predicated methods as matchers
+
+```Ruby
+# Example
+0.even?
+
+# ---
+
+it { expect(0).to be_even }
+
+```
+
+> Predicate methods are all of that returns a True or False and the name if the method has a question mark and the end.
+
+### All matcher
+
+This allows to us validate the items inside some Array.
+
+```Ruby
+# From
+[1, 2, 3].each do |item|
+  expect(item).to be < 5
+end
+# To 
+expect([1, 2, 3]).to all(be < 10)
+
+```
+
+### Falsy and Truthy
+
+For Ruby the Falsy values are false or nil, something else is considerating Truthy.
+
+For Ruby Truthy values could be wathever excepts False or Nil.
+
+### Change matcher
+This matcher allows to us to know if some object or property changes.
+> See matcher_change_spec.rb
+
+### contain_exactly
+This allows to know if something as an Array has an specific values but doesn't matter what is its order.
+If we can compare with its correct order we should use **eq** instead.
 
 
+### start_with & end_with
+This matcher allows to know if some object starts with a specefic value or ends with it
+
+### have_attributes
+This allows to know is some object has some attributes.
+
+### include
+This works to check some value in the object.
+
+
+### raise_error
+We use this for check possible errors that the app should handle.
+> We pass a block in spect statement saying to Ruby that an error is expected and keep alive the next test on the file.
+
+### respond_to
+This allows to check is an object respond to some method.
+
+### Satisty
+This allows to us create custom matchers!
+> Check matcher spec
+
+### compount matchers | nested matchers
+We can combina multiple matchers using **.and** or **.or**, see nestes_spec file for examples
 
