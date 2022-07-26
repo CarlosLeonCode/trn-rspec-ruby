@@ -202,3 +202,6 @@ This allows to us create custom matchers!
 ### compount matchers | nested matchers
 We can combina multiple matchers using **.and** or **.or**, see nestes_spec file for examples
 
+## Mock's 
+
+Mock's are a way to emulate some behavior in out application, we can create doubles to emulate our real objects in our app.
